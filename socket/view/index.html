@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <title>V Socket.IO chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+<!--     <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form> -->
+
+<div>
+	<div style="display: inline-block; margin-right: 200px">
+		<button>user 1</button>
+    	<span></span>
+	</div>
+   	<div style="display: inline-block">
+   		<button>user 2</button>
+   		<span></span>
+   </div>
+</div>
+
+
+
+<script>
+	const btns = document.querySelectorAll('button');
+	const spans = document.querySelectorAll('span');
+
+	btns[0].addEventListener('click', (e)=>{
+		const socket = io.connect('/namespace');
+		socket.emit('btn_click', {btn:1});
+		socket.on('room_join', (data)=>{
+			spans[0].innerHTML += 'user joind' + data.roomName +'<br>'
+		});
+
+	})
+
+	btns[1].addEventListener('click', (e)=>{
+		const socket = io.connect('/namespace');
+		socket.emit('btn_click', {btn:2});
+		socket.on('room_join', (data)=>{
+			spans[1].innerHTML += 'user joind' + data.roomName +'<br>'
+		});
+
+	})    	
+
+
+
+
+
+
+
+
+
+
+//  	btns[0].addEventListener('click', (e)=>{
+		// const socket = io.connect("http://localhost:3000/");
+		// socket.on('greeting', (data)=> {
+		// 	spans[0].innerHTML += data.message;
+		// 	socket.emit('news', {message: "user 1 coneccted"})
+		// });
+//  	});
+
+//  	btns[1].addEventListener('click', (e)=>{
+		// const socket = io.connect("http://localhost:3000/");
+		// socket.on('greeting', (data)=> {
+		// 	spans[1].innerHTML += data.message;
+		// 	socket.emit('news', {message: "user 2 coneccted"})
+		// });
+//  	})
+
+
+
+
+
+
+
+
+	// var socket = io.connect("http://localhost:3000/");
+
+	// socket.on('greeting', (data)=> {
+	// 	console.log(data.message)
+	// });
+
+	// socket.emit('vzgo', {message: "hello from client"})
+</script>
+    
+  </body>
+</html>
