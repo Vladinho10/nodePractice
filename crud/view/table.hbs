@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>crud</title>
+  <link rel="stylesheet" href="/css/libCSS/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="shortcut icon" href="">
+</head>
+
+<body>
+  <div class="" id="demo">
+
+  </div>
+  <div class="">
+    <p style="display: none"></p>
+    <table class="table">
+      <thead>
+        <th>Index</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th id="edDel">Edit/Delete</th>
+      </thead>
+      <tbody id="tbody">
+        {{#each docs}}
+        <tr>
+          <td>{{@index}}
+          </td>
+          <td>{{this.username}}
+          </td>
+          <td>{{this.email}}</td>
+          <td>{{this.password}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" name="button" onclick="func({{@index}})">Update</button>
+            <button type="button" class="btn btn-danger" name="button">Delete</button>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <script src="/js/libJS/jquery-3.3.1.slim.min.js"></script>
+  <script src="/js/libJS/popper.min.js"></script>
+  <script src="/js/libJS/bootstrap.min.js"></script>
+  <script src="/js/ajaxsend.js"></script>
+</body>
+
+</html>

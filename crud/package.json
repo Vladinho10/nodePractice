@@ -1,0 +1,20 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "create, read, update, delete",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo $1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "consolidate": "^0.15.1",
+    "handlebars": "^4.0.11",
+    "mongodb": "^3.1.0-beta4",
+    "mongoose": "^5.1.3"
+  }
+}
