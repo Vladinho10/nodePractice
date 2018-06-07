@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<title>V Socket.IO chat</title>
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	
+<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+		<div id="message-block" style="border: 1px solid; border-radius: 14px; width: 100%; min-height: 100px; margin-top: 10px"></div>
+		<div class="chat-block">
+		<div class="form-group">
+			<label for="text_V">User Name:</label>
+			<input type="text" name="text_V" id="text_V" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="area_V">Message</label>
+			<textarea name="area_V" id="mmm" class="form-control"></textarea>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-success" id="sentMessage">send</button>
+		</div>
+		</div>
+</div>
+
+<script src="jquery-1.12.4.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script>
+	let userName = document.getElementById('text_V');
+	let userMessage = document.getElementById('mmm');
+	let message_block = document.getElementById('message-block');
+	let sentMessage = document.getElementById('sentMessage');
+
+	sentMessage.addEventListener('click', (e)=>{
+
+	console.log(userName.value);
+	console.log(userMessage.value);
+
+		// let socket = io();
+		// socket.emit('frontChat', {
+		// 	UN: userName.value,
+		// 	UM: userMessage.value
+		// })
+
+	}, true)
+
+
+
+
+	// let socket = io.connect("http://localhost:3000/");
+
+
+
+	// socket.on('backChat', (data)=> {
+	// 	socket.emit('frontChat', data)
+	// });
+</script>
+</body>
+</html>
+

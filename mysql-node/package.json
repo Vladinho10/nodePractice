@@ -1,0 +1,24 @@
+{
+  "name": "node_debi_araj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.18.2",
+    "consolidate": "^0.15.1",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.3",
+    "request": "^2.85.0",
+    "twig": "^1.11.0"
+  },
+  "dependencies": {
+    "npm": "^6.0.0"
+  }
+}
